@@ -11,6 +11,7 @@ import {
   HardDriveDownload,
 } from "lucide-react";
 import { SITE_CONFIG } from "@/content/site";
+import type { LiveReleaseData } from "@/lib/github-release";
 
 function ChecksumRow({ sha256, label }: { sha256: string; label: string }) {
   const [copied, setCopied] = useState(false);
@@ -57,7 +58,7 @@ function ChecksumRow({ sha256, label }: { sha256: string; label: string }) {
   );
 }
 
-export function DownloadCards() {
+export function DownloadCards({ release }: { release: LiveReleaseData }) {
   const shouldReduceMotion = useReducedMotion();
   const { installer, portable, previousReleasesUrl } = SITE_CONFIG.downloads;
 
@@ -76,7 +77,7 @@ export function DownloadCards() {
             id="downloads-heading"
             className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-[#F5F5F7] sm:text-4xl"
           >
-            Download {SITE_CONFIG.name} v{SITE_CONFIG.version}
+            Download {SITE_CONFIG.name} v{release.version}
           </h2>
           <p className="mt-4 text-base leading-relaxed text-[#A1A1AA]">
             Built for {SITE_CONFIG.osRequirement} ({SITE_CONFIG.architecture}).
@@ -86,7 +87,6 @@ export function DownloadCards() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          {/* Card 1: Windows Installer (.exe) */}
           <motion.article
             initial={
               shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }
@@ -111,7 +111,7 @@ export function DownloadCards() {
                     </h3>
                     <p className="font-mono text-xs text-[#A1A1AA]">
                       {SITE_CONFIG.osRequirement} · {SITE_CONFIG.architecture} ·{" "}
-                      {installer.size}
+                      {release.installer.size}
                     </p>
                   </div>
                 </div>
@@ -143,22 +143,24 @@ export function DownloadCards() {
 
             <div className="mt-8">
               <a
-                href={installer.url}
+                href={release.installer.url}
                 download
                 className="flex min-h-[48px] w-full items-center justify-center gap-2.5 rounded-xl bg-[#FF8800] px-5 py-3 text-sm font-semibold text-[#0E0E12] shadow-[inset_0_1px_0_rgba(255,255,255,0.28),0_10px_28px_-6px_rgba(255,136,0,0.35)] transition-all duration-150 hover:-translate-y-0.5 hover:bg-[#FFA033]"
               >
                 <Download className="h-4 w-4 stroke-[2.25]" aria-hidden="true" />
                 <span>Download Installer ({installer.extension})</span>
                 <span className="font-mono text-xs font-normal text-[#0E0E12]/80">
-                  · {installer.size}
+                  · {release.installer.size}
                 </span>
               </a>
 
-              <ChecksumRow sha256={installer.sha256} label={installer.title} />
+              <ChecksumRow
+                sha256={release.installer.sha256}
+                label={installer.title}
+              />
             </div>
           </motion.article>
 
-          {/* Card 2: Portable ZIP (.zip) */}
           <motion.article
             initial={
               shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: 16 }
@@ -187,7 +189,7 @@ export function DownloadCards() {
                     </h3>
                     <p className="font-mono text-xs text-[#A1A1AA]">
                       {SITE_CONFIG.osRequirement} · {SITE_CONFIG.architecture} ·{" "}
-                      {portable.size}
+                      {release.portable.size}
                     </p>
                   </div>
                 </div>
@@ -219,23 +221,25 @@ export function DownloadCards() {
 
             <div className="mt-8">
               <a
-                href={portable.url}
+                href={release.portable.url}
                 download
                 className="flex min-h-[48px] w-full items-center justify-center gap-2.5 rounded-xl border border-white/[0.1] bg-[#1E1E26] px-5 py-3 text-sm font-semibold text-[#F5F5F7] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] transition-all duration-150 hover:-translate-y-0.5 hover:border-white/[0.2] hover:bg-white/[0.08]"
               >
                 <FolderArchive className="h-4 w-4" aria-hidden="true" />
                 <span>Download Portable ({portable.extension})</span>
                 <span className="font-mono text-xs font-normal text-[#A1A1AA]">
-                  · {portable.size}
+                  · {release.portable.size}
                 </span>
               </a>
 
-              <ChecksumRow sha256={portable.sha256} label={portable.title} />
+              <ChecksumRow
+                sha256={release.portable.sha256}
+                label={portable.title}
+              />
             </div>
           </motion.article>
         </div>
 
-        {/* Footer note with previous versions link */}
         <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-white/[0.08] bg-[#16161C]/60 px-6 py-4 text-sm text-[#A1A1AA]">
           <span>
             Looking for older builds, debug symbols, or source tarballs?

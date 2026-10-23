@@ -6,20 +6,25 @@ import { ChangelogCard } from "@/components/ChangelogCard";
 import { DownloadCards } from "@/components/DownloadCards";
 import { Faq } from "@/components/Faq";
 import { Footer } from "@/components/Footer";
+import { getLatestRelease } from "@/lib/github-release";
 
-export default function HomePage() {
+export const revalidate = 60;
+
+export default async function HomePage() {
+  const release = await getLatestRelease();
+
   return (
     <div className="relative min-h-screen bg-[#0E0E12] text-[#F5F5F7]">
-      <Nav />
+      <Nav release={release} />
       <main id="main-content">
-        <Hero />
+        <Hero release={release} />
         <FeatureGrid />
         <ScreenshotGallery />
-        <ChangelogCard />
-        <DownloadCards />
+        <ChangelogCard release={release} />
+        <DownloadCards release={release} />
         <Faq />
       </main>
-      <Footer />
+      <Footer release={release} />
     </div>
   );
 }

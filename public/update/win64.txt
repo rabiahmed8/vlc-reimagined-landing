@@ -1,6 +1,0 @@
-1.0.0
-https://github.com/rabiahmed8/vlc-reimagined/releases/download/v1.0.0/VLC-Reimagined-1.0.0-win64-setup.exe
-VLC Reimagined 1.0.0
-- Redesigned player, library and settings.
-- Queue reordering, track panels and subtitle sync.
-- Portable mode, side-by-side installation with VLC, in-app updates.

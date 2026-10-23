@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { SITE_CONFIG, SITE_CONTENT } from "@/content/site";
+import type { LiveReleaseData } from "@/lib/github-release";
 
-export function Footer() {
+export function Footer({ release }: { release: LiveReleaseData }) {
   return (
     <footer
       aria-label="Site footer"
@@ -23,7 +24,7 @@ export function Footer() {
                   {SITE_CONFIG.name}
                 </span>
                 <span className="rounded border border-white/[0.08] bg-[#16161C] px-1.5 py-0.5 font-mono text-[11px] text-[#A1A1AA]">
-                  v{SITE_CONFIG.version}
+                  v{release.version}
                 </span>
               </div>
               <p className="mt-0.5 text-xs text-[#A1A1AA]">
@@ -59,6 +60,8 @@ export function Footer() {
             </a>
             <a
               href={SITE_CONFIG.links.contact}
+              target="_blank"
+              rel="noopener noreferrer"
               className="transition-colors hover:text-[#FFA033]"
             >
               Contact
@@ -77,7 +80,7 @@ export function Footer() {
         <div className="mt-8 flex flex-col justify-between gap-4 text-xs leading-relaxed text-[#A1A1AA]/80 sm:flex-row sm:items-center">
           <p>{SITE_CONTENT.footer.disclaimer}</p>
           <p className="shrink-0 font-mono text-[11px]">
-            Current release: v{SITE_CONFIG.version}
+            Current release: v{release.version}
           </p>
         </div>
       </div>

@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { Download, Menu, X } from "lucide-react";
 import { SITE_CONFIG, SITE_CONTENT } from "@/content/site";
+import type { LiveReleaseData } from "@/lib/github-release";
 
-export function Nav() {
+export function Nav({ release }: { release: LiveReleaseData }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -45,7 +46,7 @@ export function Nav() {
               {SITE_CONFIG.name}
             </span>
             <span className="hidden rounded-md border border-white/[0.08] bg-[#16161C] px-1.5 py-0.5 font-mono text-[11px] font-medium text-[#A1A1AA] sm:inline-block">
-              v{SITE_CONFIG.version}
+              v{release.version}
             </span>
           </div>
         </a>
@@ -110,7 +111,7 @@ export function Nav() {
                 <Download className="h-4 w-4 stroke-[2.25]" aria-hidden="true" />
                 <span>
                   Download ({SITE_CONFIG.downloads.installer.extension},{" "}
-                  {SITE_CONFIG.downloads.installer.size})
+                  {release.installer.size})
                 </span>
               </a>
             </div>

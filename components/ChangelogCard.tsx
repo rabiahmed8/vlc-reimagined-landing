@@ -3,8 +3,9 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { RefreshCw, Tag } from "lucide-react";
 import { SITE_CONTENT } from "@/content/site";
+import type { LiveReleaseData } from "@/lib/github-release";
 
-export function ChangelogCard() {
+export function ChangelogCard({ release }: { release: LiveReleaseData }) {
   const shouldReduceMotion = useReducedMotion();
   const { changelogSection } = SITE_CONTENT;
 
@@ -30,7 +31,7 @@ export function ChangelogCard() {
             id="changelog-heading"
             className="mt-3 text-3xl font-semibold tracking-[-0.03em] text-[#F5F5F7] sm:text-4xl"
           >
-            {changelogSection.heading}
+            What&apos;s new in v{release.version}
           </h2>
 
           <div className="surface-card mt-8 overflow-hidden rounded-[20px]">
@@ -38,27 +39,27 @@ export function ChangelogCard() {
               <div className="flex items-center gap-3">
                 <span className="inline-flex items-center gap-1.5 rounded-lg border border-[#FF8800]/30 bg-[#FF8800]/10 px-2.5 py-1 font-mono text-xs font-semibold text-[#FF8800]">
                   <Tag className="h-3.5 w-3.5" aria-hidden="true" />
-                  v{changelogSection.version}
+                  v{release.version}
                 </span>
                 <span className="text-sm font-medium text-[#F5F5F7]">
                   Stable Release
                 </span>
               </div>
               <time
-                dateTime={changelogSection.dateIso}
+                dateTime={release.releaseDateIso}
                 className="font-mono text-xs text-[#A1A1AA]"
               >
-                {changelogSection.date}
+                {release.releaseDate}
               </time>
             </div>
 
             <div className="p-6 sm:p-8">
               <p className="text-sm font-medium text-[#F5F5F7] sm:text-base">
-                {changelogSection.summary}
+                {release.changelog.summary}
               </p>
 
               <ul className="mt-5 space-y-3">
-                {changelogSection.highlights.map((item, idx) => (
+                {release.changelog.highlights.map((item, idx) => (
                   <li
                     key={idx}
                     className="flex items-start gap-3 text-sm leading-relaxed text-[#A1A1AA]"
