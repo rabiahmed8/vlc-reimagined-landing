@@ -48,7 +48,7 @@ export const SITE_CONTENT = {
     badge: `Release v${SITE_CONFIG.version} for Windows`,
     headline: "The player you know. The interface you wanted.",
     subline:
-      "Every codec and stream VLC 4 plays, rebuilt with a quiet, dark desktop interface designed for modern Windows workspaces.",
+      "Every codec and stream the VLC 4 engine plays, rebuilt with a quiet, dark desktop interface designed for modern Windows workspaces.",
     metaLine: `${SITE_CONFIG.osRequirement} · ${SITE_CONFIG.architecture} · Free & open source · v${SITE_CONFIG.version}`,
     heroScreenshot: {
       src: "/screenshots/player.webp",
@@ -59,7 +59,7 @@ export const SITE_CONTENT = {
   },
 
   featuresSection: {
-    eyebrow: "Built on libVLC 4",
+    eyebrow: "Built on the VLC 4 engine",
     heading: "Everything plays. Finally, it looks the part.",
     subline:
       "No codec packs, no configuration wizards, and no legacy chrome. Just fast local playback and clean controls.",
@@ -192,7 +192,7 @@ export const SITE_CONTENT = {
     dateIso: SITE_CONFIG.releaseDateIso,
     summary: "Initial public release of VLC Reimagined for 64-bit Windows 10 and Windows 11.",
     highlights: [
-      "Complete desktop UI rewrite built on top of the VLC 4 core engine with Direct3D 11 hardware acceleration.",
+      "Complete desktop UI rewrite built on the VLC 4 engine with Direct3D 11 hardware acceleration.",
       "Dedicated Media Library with instant switching between Videos, Music, Playlists, and local Folders.",
       "Unified right-hand drawer for playback queue ordering, multi-track audio switching, and subtitle styling.",
       "Integrated audio/video effects rack featuring a 10-band equalizer and an interactive subtitle sync timeline.",
@@ -237,12 +237,12 @@ export const SITE_CONTENT = {
       {
         question: "Why does Windows SmartScreen warn when launching the installer?",
         answer:
-          "Because this is an independent open-source release, the binary does not yet carry an Extended Validation (EV) commercial code-signing certificate. Click 'More info' and then 'Run anyway' to proceed. Commercial code signing is planned for an upcoming point release.",
+          "Because this is an independent open-source release, the installer is not code-signed yet. Windows SmartScreen may show “Windows protected your PC”: choose “More info” and then “Run anyway”. Windows will then show a UAC prompt naming an unknown publisher; choose “Yes” to install. Code signing is planned for a future release.",
       },
       {
         question: "Which formats are supported?",
         answer:
-          "Everything VLC media player 4 supports out of the box: MP4, MKV, AVI, WebM, MOV, HEVC (H.265), AV1, H.264, ProRes, FLAC, ALAC, MP3, Opus, Ogg, DVDs, Blu-ray (unencrypted), RTSP, MMS, and HLS/DASH network streams.",
+          "Everything the VLC 4 engine supports out of the box: MP4, MKV, AVI, WebM, MOV, HEVC (H.265), AV1, H.264, ProRes, FLAC, ALAC, MP3, Opus, Ogg, DVDs, Blu-ray (unencrypted), RTSP, MMS, and HLS/DASH network streams.",
       },
     ] satisfies FaqItem[],
   },

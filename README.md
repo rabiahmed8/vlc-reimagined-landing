@@ -23,18 +23,21 @@ npm run build
 All release metadata is centralized so you never have to hunt through components:
 
 1. **[`site.config.ts`](./site.config.ts)** — Single source of truth for:
-   - `version` (e.g. `"4.0.0"`)
+   - `version` (e.g. `"1.0.0"`)
    - `releaseDate` & `releaseDateIso`
    - `domain` (used for canonical SEO metadata, `sitemap.xml`, `robots.txt`, and OpenGraph URLs)
    - `downloads.installer` (`.exe` filename, size, download URL, SHA-256 checksum)
    - `downloads.portable` (`.zip` filename, size, download URL, SHA-256 checksum)
-   - `links` (GitHub repository, releases, bug tracker, contact email)
+   - `links` (GitHub repository, releases, bug tracker, contact link)
 2. **[`content/site.ts`](./content/site.ts)** — Exports `INSTALLER_DOWNLOAD_URL`, `PORTABLE_DOWNLOAD_URL`, and structured section copy (hero, features, screenshot gallery captions, changelog bullets, and FAQ items).
-3. **[`public/update/win64.txt`](./public/update/win64.txt)** — Plain-text manifest read over HTTPS by the in-app daily updater. Keep its three lines updated on every release:
+3. **[`public/update/win64.txt`](./public/update/win64.txt)** — Plain-text manifest read over HTTPS by the in-app daily updater. Keep it updated on every release:
    ```text
-   4.0.0
-   https://vlcreimagined.org/downloads/VLC-Reimagined-4.0.0-win64-setup.exe
-   Initial public release of VLC Reimagined.
+   1.0.0
+   https://github.com/rabiahmed8/vlc-reimagined/releases/download/v1.0.0/VLC-Reimagined-1.0.0-win64-setup.exe
+   VLC Reimagined 1.0.0
+   - Redesigned player, library and settings.
+   - Queue reordering, track panels and subtitle sync.
+   - Portable mode, side-by-side installation with VLC, in-app updates.
    ```
 
 ---

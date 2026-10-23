@@ -475,11 +475,11 @@ function buildOgSvg(conePaths) {
     <text x="204" y="160" fill="#F5F5F7" font-family="Inter, Segoe UI, sans-serif" font-size="30" font-weight="600" letter-spacing="-0.5">VLC Reimagined</text>
     <text x="88" y="305" fill="#F5F5F7" font-family="Inter, Segoe UI, sans-serif" font-size="60" font-weight="700" letter-spacing="-2">The player you know.</text>
     <text x="88" y="380" fill="#F5F5F7" font-family="Inter, Segoe UI, sans-serif" font-size="60" font-weight="700" letter-spacing="-2">The interface you wanted.</text>
-    <text x="88" y="452" fill="#A1A1AA" font-family="Inter, Segoe UI, sans-serif" font-size="24" font-weight="400">Every format VLC 4 plays, rebuilt with a quiet, dark desktop UI for Windows.</text>
+    <text x="88" y="452" fill="#A1A1AA" font-family="Inter, Segoe UI, sans-serif" font-size="24" font-weight="400">Every format the VLC 4 engine plays, rebuilt with a quiet, dark desktop UI for Windows.</text>
 
     <rect x="88" y="496" width="186" height="44" rx="12" fill="#FF8800"/>
     <text x="181" y="524" text-anchor="middle" fill="#0E0E12" font-family="Inter, Segoe UI, sans-serif" font-size="18" font-weight="700">Windows 10 / 11</text>
-    <text x="300" y="524" fill="#A1A1AA" font-family="Consolas, monospace" font-size="18">64-bit · GPLv2+ · v4.0.0</text>
+    <text x="300" y="524" fill="#A1A1AA" font-family="Consolas, monospace" font-size="18">64-bit · GPLv2+ · v1.0.0</text>
   </svg>`;
 }
 
@@ -514,6 +514,11 @@ async function main() {
     .png({ compressionLevel: 9 })
     .toBuffer();
   await fs.writeFile(path.join(PUBLIC_DIR, "og.png"), ogBuf);
+
+  if (process.argv.includes("--og-only")) {
+    console.log("Successfully regenerated public/og.png (v1.0.0) without touching screenshots.");
+    return;
+  }
 
   await generateHeroPlayerWebp();
   await generateLibraryWebp();
