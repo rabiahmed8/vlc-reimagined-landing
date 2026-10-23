@@ -50,6 +50,8 @@ Drop your final assets into `public/` using these exact filenames:
 | `public/cone.svg` | `24×24` vector | Bare orange cone vector (`logo.svg`) |
 | `public/og.png` | `1200×630` | Social share / OpenGraph preview card |
 | `public/screenshots/player.webp` | `1919×1079` (16:9) | Main player window (used in Hero + Gallery #1) |
+| `public/screenshots/library.webp` | `1919×1079` (16:9) | Media Library & Folders left drawer |
+| `public/screenshots/queue-tracks.webp` | `1919×1079` (16:9) | Queue, Bookmarks & Chapters right drawer |
 | `public/screenshots/settings.webp` | `1920×1080` (16:9) | Global Settings window |
 | `public/screenshots/audio-effects.webp` | `1920×1080` (16:9) | Audio Effects & 10-band Equalizer |
 | `public/screenshots/subtitle-timeline.webp` | `1920×1080` (16:9) | Interactive Subtitle Sync Timeline |

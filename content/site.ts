@@ -127,6 +127,28 @@ export const SITE_CONTENT = {
         aspect: "16 / 9",
       },
       {
+        id: "library",
+        title: "Media Library & Folders",
+        caption:
+          "Slide-out sidebar with quick-access tabs for Videos, Music, Network, Playlists, History, and a two-column folder thumbnail browser.",
+        src: "/screenshots/library.webp",
+        alt: "VLC Reimagined Media Library and Folders drawer open alongside video playback",
+        width: 1919,
+        height: 1079,
+        aspect: "16 / 9",
+      },
+      {
+        id: "queue-tracks",
+        title: "Queue, Bookmarks & Chapters",
+        caption:
+          "Right-hand drawer combining the active playback queue, shuffle and repeat controls, saved bookmarks, and chapter navigation.",
+        src: "/screenshots/queue-tracks.webp",
+        alt: "VLC Reimagined right-hand Queue, Bookmarks, and Chapters drawer",
+        width: 1919,
+        height: 1079,
+        aspect: "16 / 9",
+      },
+      {
         id: "settings",
         title: "Global Settings",
         caption:
