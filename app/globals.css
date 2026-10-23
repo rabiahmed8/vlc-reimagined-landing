@@ -1,0 +1,85 @@
+@import "tailwindcss";
+
+:root {
+  --bg-base: #0E0E12;
+  --bg-surface: #16161C;
+  --bg-elevated: #1E1E26;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.14);
+  --text-primary: #F5F5F7;
+  --text-secondary: #A1A1AA;
+  --accent: #FF8800;
+  --accent-hover: #FFA033;
+  color-scheme: dark;
+}
+
+@layer base {
+  html {
+    background-color: #0E0E12;
+    color: #F5F5F7;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  body {
+    background-color: #0E0E12;
+    color: #F5F5F7;
+    overflow-x: hidden;
+    selection-background-color: rgba(255, 136, 0, 0.25);
+  }
+
+  ::selection {
+    background-color: rgba(255, 136, 0, 0.25);
+    color: #F5F5F7;
+  }
+
+  :focus-visible {
+    outline: 2px solid #FF8800;
+    outline-offset: 2px;
+  }
+}
+
+/* Subtle noise overlay for hero depth */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.028'/%3E%3C/svg%3E");
+}
+
+/* Precision card surface with top inner specular highlight */
+.surface-card {
+  background-color: #16161C;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.06),
+    0 16px 40px -16px rgba(0, 0, 0, 0.65);
+}
+
+.surface-elevated {
+  background-color: #1E1E26;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.07);
+}
+
+/* Custom subtle scrollbars for horizontal screenshot track */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+  <defs>
+    <linearGradient id="tileBg" x1="512" y1="0" x2="512" y2="1024" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1E1E26"/>
+      <stop offset="100%" stop-color="#0E0E12"/>
+    </linearGradient>
+    <radialGradient id="coneGlow" cx="50%" cy="48%" r="42%">
+      <stop offset="0%" stop-color="#FF8800" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#FF8800" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="coneBody" x1="512" y1="180" x2="512" y2="780" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FFA033"/>
+      <stop offset="55%" stop-color="#FF8800"/>
+      <stop offset="100%" stop-color="#D96B00"/>
+    </linearGradient>
+    <linearGradient id="basePlate" x1="212" y1="730" x2="812" y2="830" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF961F"/>
+      <stop offset="100%" stop-color="#CC6200"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark rounded charcoal tile -->
+  <rect x="24" y="24" width="976" height="976" rx="224" fill="url(#tileBg)"/>
+  <rect x="26" y="26" width="972" height="972" rx="222" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="4"/>
+
+  <!-- Ambient orange glow -->
+  <circle cx="512" cy="500" r="380" fill="url(#coneGlow)"/>
+
+  <!-- Traffic cone base shadow -->
+  <ellipse cx="512" cy="825" rx="290" ry="34" fill="#000000" fill-opacity="0.55"/>
+
+  <!-- Cone body -->
+  <path d="M466 210C473 190 491 178 512 178C533 178 551 190 558 210L730 740H294L466 210Z" fill="url(#coneBody)"/>
+
+  <!-- Reflective white stripes (clipped to cone silhouette) -->
+  <path d="M423 342L601 342L632 438L392 438L423 342Z" fill="#F5F5F7" fill-opacity="0.94"/>
+  <path d="M366 518L658 518L689 614L335 614L366 518Z" fill="#F5F5F7" fill-opacity="0.94"/>
+
+  <!-- Base flange -->
+  <rect x="224" y="726" width="576" height="84" rx="42" fill="url(#basePlate)"/>
+  <rect x="226" y="728" width="572" height="80" rx="40" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2"/>
+</svg>
