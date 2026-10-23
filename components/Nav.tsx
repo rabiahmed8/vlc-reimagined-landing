@@ -32,16 +32,14 @@ export function Nav() {
           className="group flex items-center gap-3 rounded-xl py-1 pr-2 focus-visible:outline-2 focus-visible:outline-[#FF8800]"
           aria-label={`${SITE_CONFIG.name} home`}
         >
-          <div className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-[10px] border border-white/[0.1] bg-gradient-to-b from-[#1E1E26] to-[#121217] shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
-            <Image
-              src="/logo.png"
-              alt=""
-              width={36}
-              height={36}
-              className="h-full w-full object-cover"
-              priority
-            />
-          </div>
+          <Image
+            src="/logo.svg"
+            alt=""
+            width={36}
+            height={36}
+            className="h-9 w-9 shrink-0"
+            priority
+          />
           <div className="flex items-center gap-2">
             <span className="text-[15px] font-semibold tracking-[-0.02em] text-[#F5F5F7]">
               {SITE_CONFIG.name}

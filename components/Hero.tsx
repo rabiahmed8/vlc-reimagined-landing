@@ -117,30 +117,9 @@ export function Hero() {
               aria-hidden="true"
             />
 
-            <div className="overflow-hidden rounded-[18px] border border-white/[0.1] bg-[#16161C] shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_32px_80px_-20px_rgba(0,0,0,0.85)]">
-              {/* Subtle Windows 11 dark window titlebar */}
-              <div className="flex h-9 items-center justify-between border-b border-white/[0.08] bg-[#16161C] px-3.5 select-none">
-                <div className="flex items-center gap-2">
-                  <Image
-                    src="/logo.png"
-                    alt=""
-                    width={16}
-                    height={16}
-                    className="h-4 w-4 rounded-[4px]"
-                  />
-                  <span className="font-mono text-[11px] font-medium text-[#A1A1AA]">
-                    VLC Reimagined — Blade_Runner_2049_UHD_HDR10.mkv
-                  </span>
-                </div>
-                <div className="flex items-center gap-3 text-[#A1A1AA]/70" aria-hidden="true">
-                  <span className="h-[1px] w-2.5 bg-current" />
-                  <span className="h-2.5 w-2.5 border border-current" />
-                  <span className="text-xs leading-none">×</span>
-                </div>
-              </div>
-
-              {/* Main 16:9 Screenshot */}
-              <div className="relative aspect-video w-full bg-[#0E0E12]">
+            <div className="overflow-hidden rounded-[16px] border border-white/[0.1] bg-[#1A1A1A] shadow-[inset_0_1px_0_rgba(255,255,255,0.1),0_32px_80px_-20px_rgba(0,0,0,0.85)]">
+              {/* Main 16:9 Screenshot with native VLC Reimagined top & bottom bars */}
+              <div className="relative aspect-video w-full bg-[#1A1A1A]">
                 <Image
                   src={SITE_CONTENT.hero.heroScreenshot.src}
                   alt={SITE_CONTENT.hero.heroScreenshot.alt}

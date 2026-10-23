@@ -1,42 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
   <defs>
-    <linearGradient id="tileBg" x1="512" y1="0" x2="512" y2="1024" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#1E1E26"/>
-      <stop offset="100%" stop-color="#0E0E12"/>
-    </linearGradient>
-    <radialGradient id="coneGlow" cx="50%" cy="48%" r="42%">
-      <stop offset="0%" stop-color="#FF8800" stop-opacity="0.24"/>
-      <stop offset="100%" stop-color="#FF8800" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="coneBody" x1="512" y1="180" x2="512" y2="780" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FFA033"/>
-      <stop offset="55%" stop-color="#FF8800"/>
-      <stop offset="100%" stop-color="#D96B00"/>
-    </linearGradient>
-    <linearGradient id="basePlate" x1="212" y1="730" x2="812" y2="830" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#FF961F"/>
-      <stop offset="100%" stop-color="#CC6200"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#101014"/>
+      <stop offset="1" stop-color="#1E1E26"/>
     </linearGradient>
   </defs>
-
-  <!-- Dark rounded charcoal tile -->
-  <rect x="24" y="24" width="976" height="976" rx="224" fill="url(#tileBg)"/>
-  <rect x="26" y="26" width="972" height="972" rx="222" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="4"/>
-
-  <!-- Ambient orange glow -->
-  <circle cx="512" cy="500" r="380" fill="url(#coneGlow)"/>
-
-  <!-- Traffic cone base shadow -->
-  <ellipse cx="512" cy="825" rx="290" ry="34" fill="#000000" fill-opacity="0.55"/>
-
-  <!-- Cone body -->
-  <path d="M466 210C473 190 491 178 512 178C533 178 551 190 558 210L730 740H294L466 210Z" fill="url(#coneBody)"/>
-
-  <!-- Reflective white stripes (clipped to cone silhouette) -->
-  <path d="M423 342L601 342L632 438L392 438L423 342Z" fill="#F5F5F7" fill-opacity="0.94"/>
-  <path d="M366 518L658 518L689 614L335 614L366 518Z" fill="#F5F5F7" fill-opacity="0.94"/>
-
-  <!-- Base flange -->
-  <rect x="224" y="726" width="576" height="84" rx="42" fill="url(#basePlate)"/>
-  <rect x="226" y="728" width="572" height="80" rx="40" stroke="#FFFFFF" stroke-opacity="0.18" stroke-width="2"/>
+  <rect width="1024" height="1024" rx="230.4" fill="url(#bg)"/>
+  <g transform="translate(184.50 184.50) scale(27.291667)">
+        <path d="M16.7912 14.4111L17.1798 15.5778C16.014 16.4334 14.2264 17.2111 12.0502 17.2111C9.7963 17.2111 8.08643 16.4334 6.92061 15.5778L7.30921 14.4111H5.52162C5.13302 14.4111 4.89985 14.6445 4.74441 14.9556L3.03454 21.4889C2.8791 21.9556 3.2677 22.5 3.81175 22.5H20.211C20.755 22.5 21.0659 22.0334 20.9882 21.4889L19.2006 14.9556C19.1229 14.6445 18.812 14.4111 18.4234 14.4111H16.7912Z" fill="#FF8800"/>
+    <path d="M7.85327 12.1555C8.78593 12.8555 10.1849 13.4777 11.9725 13.4777C13.7601 13.4777 15.1591 12.7777 16.0917 12.1555L15.0036 8.42212C14.3041 8.88879 13.2938 9.1999 11.9725 9.1999C10.6512 9.1999 9.64086 8.81101 8.94137 8.42212L7.85327 12.1555Z" fill="#FF8800"/>
+    <path d="M9.95166 4.84444L10.6512 2.43333C11.0398 1.18889 12.8274 1.18889 13.216 2.43333L13.9155 4.84444C13.3714 5 12.7496 5.15555 11.9724 5.15555C11.1952 5.15555 10.5734 5 9.95166 4.84444Z" fill="#FF8800"/>
+  </g>
 </svg>

@@ -45,13 +45,14 @@ Drop your final assets into `public/` using these exact filenames:
 
 | Path | Dimensions | Description |
 | :--- | :--- | :--- |
-| `public/logo.png` | `1024×1024` | Traffic-cone mark on dark rounded tile (PNG) |
-| `public/logo.svg` | Vector `1:1` | Vector version of the logo mark |
+| `public/logo.svg` | `1024×1024` vector | Official app mark (`vlc-reimagined.svg`: orange cone on dark rounded tile) |
+| `public/logo.png` | `1024×1024` | Raster PNG of the official app mark |
+| `public/cone.svg` | `24×24` vector | Bare orange cone vector (`logo.svg`) |
 | `public/og.png` | `1200×630` | Social share / OpenGraph preview card |
-| `public/screenshots/player.webp` | `2560×1440` (16:9) | Main player window (used in Hero + Gallery #1) |
-| `public/screenshots/library.webp` | `2560×1440` (16:9) | Media library view (Videos, Music, Playlists, Folders) |
-| `public/screenshots/queue-tracks.webp` | `2560×1440` (16:9) | Playback queue & audio/subtitle track panel |
-| `public/screenshots/settings.webp` | `2560×1440` (16:9) | Settings, 10-band equalizer, and subtitle sync timeline |
+| `public/screenshots/player.webp` | `1919×1079` (16:9) | Main player window (used in Hero + Gallery #1) |
+| `public/screenshots/settings.webp` | `1920×1080` (16:9) | Global Settings window |
+| `public/screenshots/audio-effects.webp` | `1920×1080` (16:9) | Audio Effects & 10-band Equalizer |
+| `public/screenshots/subtitle-timeline.webp` | `1920×1080` (16:9) | Interactive Subtitle Sync Timeline |
 
 ---
 

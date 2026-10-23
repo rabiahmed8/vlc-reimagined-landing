@@ -10,15 +10,13 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-start justify-between gap-8 border-b border-white/[0.08] pb-10 md:flex-row md:items-center">
           <div className="flex items-center gap-3.5">
-            <div className="relative flex h-9 w-9 shrink-0 items-center justify-center overflow-hidden rounded-[10px] border border-white/[0.1] bg-[#16161C]">
-              <Image
-                src="/logo.png"
-                alt=""
-                width={36}
-                height={36}
-                className="h-full w-full object-cover"
-              />
-            </div>
+            <Image
+              src="/logo.svg"
+              alt=""
+              width={40}
+              height={40}
+              className="h-10 w-10 shrink-0"
+            />
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-semibold tracking-[-0.02em] text-[#F5F5F7]">
